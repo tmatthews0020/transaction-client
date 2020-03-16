@@ -1,0 +1,15 @@
+<form clrForm [formGroup]="form" (ngSubmit)="saveTransaction()">
+    <clr-input-container>
+        <label>Category</label>
+        <input clrInput type="string" formControlName="category" /> 
+    </clr-input-container>
+    <clr-input-container>
+        <label>Amount</label>
+        <input clrInput type="number" formControlName="amount" /> 
+    </clr-input-container>
+    <clr-input-container>
+        <label>Currency</label>
+        <input clrInput type="string" formControlName="currency" /> 
+    </clr-input-container>
+    <button class="btn btn-primary">Save</button>
+</form>

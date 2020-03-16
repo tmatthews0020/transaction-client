@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  createTransactionApiUrl: 'https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/transaction/create',
+  listTransactionsApiUrl: 'https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/transaction/list',
 };
 
 /*
