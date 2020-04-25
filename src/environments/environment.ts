@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   createTransactionApiUrl: 'https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/transaction/create',
   listTransactionsApiUrl: 'https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/transaction/list',
+  authUrl: 'https://login.tmatthews.dev/login?client_id=5n70m8sqvpbtoaon0elblfln02&response_type=token&scope=aws.cognito.signin.user.admin+openid+phone+email+profile&redirect_uri=http://localhost:4200/auth'
 };
 
 /*
