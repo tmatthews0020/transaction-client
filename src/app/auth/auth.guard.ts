@@ -21,7 +21,6 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     if (!this.authService.accessToken || !this.authService.token) {
-      debugger;
       this.document.location.href = environment.authUrl;
     }
 

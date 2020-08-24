@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "cd ./dist/transactions-client && aws s3 mv . s3://budget-client --recursive"
   },
   "private": true,
   "dependencies": {
@@ -20,22 +22,23 @@
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
     "@clr/angular": "^3.0.1",
+    "@clr/core": "3.0.1",
+    "@clr/icons": "3.0.1",
+    "@clr/ui": "3.0.1",
+    "@ngrx/store": "^9.1.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "@clr/ui": "3.0.1",
-    "@clr/icons": "3.0.1",
-    "@clr/core": "3.0.1",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.6",
     "@angular/cli": "~9.0.6",
     "@angular/compiler-cli": "~9.0.6",
     "@angular/language-service": "~9.0.6",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
