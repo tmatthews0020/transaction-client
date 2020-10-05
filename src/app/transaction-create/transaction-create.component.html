@@ -1,15 +1,41 @@
-<form clrForm [formGroup]="form" (ngSubmit)="saveTransaction()">
+<div fxLayout="row">
+  <form clrForm [formGroup]="form" (ngSubmit)="saveTransaction()">
+    <clr-datalist-container>
+      <label>Category</label>
+      <input
+        clrDatalistInput
+        formControlName="category"
+        placeholder="Choose Category"
+        name="Category"
+      />
+      <datalist>
+        <option
+          *ngFor="let category of categories$ | async"
+          [value]="category.id"
+        >
+          {{ category.categoryName }}
+        </option>
+      </datalist>
+    </clr-datalist-container>
     <clr-input-container>
-        <label>Category</label>
-        <input clrInput type="string" formControlName="category" /> 
+      <label>Amount</label>
+      <input clrInput type="number" formControlName="amount" />
     </clr-input-container>
     <clr-input-container>
-        <label>Amount</label>
-        <input clrInput type="number" formControlName="amount" /> 
+      <label>Currency</label>
+      <input clrInput type="string" formControlName="currency" />
     </clr-input-container>
-    <clr-input-container>
-        <label>Currency</label>
-        <input clrInput type="string" formControlName="currency" /> 
-    </clr-input-container>
-    <button class="btn btn-primary">Save</button>
-</form>
+    <clr-date-container>
+      <label>Effective Date</label>
+      <input
+        type="date"
+        clrDate
+        name="effective date"
+        formControlName="effectiveDate"
+      />
+    </clr-date-container>
+    <button [disabled]="form.invalid" class="btn btn-primary">
+      Add Transaction
+    </button>
+  </form>
+</div>

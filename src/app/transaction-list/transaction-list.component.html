@@ -1,12 +1,14 @@
-<h3> Transactions </h3>
-    
+<h3>Transactions</h3>
+
 <clr-datagrid>
-    <clr-dg-column>Category</clr-dg-column>
-    <clr-dg-column>Amount</clr-dg-column>
-    <clr-dg-column>Currency</clr-dg-column>
-    <clr-dg-row *ngFor="let transaction of transactions$ | async">
-        <clr-dg-cell>{{ transaction.category }} </clr-dg-cell>
-        <clr-dg-cell>{{ transaction.amount }} </clr-dg-cell>
-        <clr-dg-cell>{{ transaction.currency }}</clr-dg-cell>
-    </clr-dg-row>
+  <clr-dg-column>Category</clr-dg-column>
+  <clr-dg-column>Amount</clr-dg-column>
+  <clr-dg-column>Currency</clr-dg-column>
+  <clr-dg-column>Effective Date</clr-dg-column>
+  <clr-dg-row *ngFor="let transaction of transactions$ | async">
+    <clr-dg-cell>{{ transaction.category }} </clr-dg-cell>
+    <clr-dg-cell>{{ transaction.amount }} </clr-dg-cell>
+    <clr-dg-cell>{{ transaction.currency }}</clr-dg-cell>
+    <clr-dg-cell>{{ transaction.effectiveDate }}</clr-dg-cell>
+  </clr-dg-row>
 </clr-datagrid>
