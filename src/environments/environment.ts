@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   createTransactionApiUrl:
-    "https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/transaction/create",
+    "https://60l83ivu1c.execute-api.us-east-1.amazonaws.com/dev/transaction/create",
   listTransactionsApiUrl:
-    "https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/transaction/list",
+    "https://60l83ivu1c.execute-api.us-east-1.amazonaws.com/dev/transaction/list",
   createCategoryApiUrl:
-    "https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/category/create",
+    "https://ppekqeriok.execute-api.us-east-1.amazonaws.com/dev/category/create",
   listCategoriesApiUrl:
-    "https://u9q0rdrp7a.execute-api.us-east-1.amazonaws.com/dev/category/list",
+    "https://ppekqeriok.execute-api.us-east-1.amazonaws.com/dev/category/list",
   authUrl:
     "https://login.tmatthews.dev/login?client_id=53gif49rs1d5hnefoq77c7a5ui&response_type=token&scope=aws.cognito.signin.user.admin+openid+phone+email+profile&redirect_uri=http://localhost:4200/auth",
 };

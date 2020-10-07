@@ -1,22 +1,16 @@
 <div fxLayout="row">
   <form clrForm [formGroup]="form" (ngSubmit)="saveTransaction()">
-    <clr-datalist-container>
+    <clr-select-container>
       <label>Category</label>
-      <input
-        clrDatalistInput
-        formControlName="category"
-        placeholder="Choose Category"
-        name="Category"
-      />
-      <datalist>
+      <select clrSelect name="Category" formControlName="category">
         <option
           *ngFor="let category of categories$ | async"
           [value]="category.id"
         >
           {{ category.categoryName }}
         </option>
-      </datalist>
-    </clr-datalist-container>
+      </select>
+    </clr-select-container>
     <clr-input-container>
       <label>Amount</label>
       <input clrInput type="number" formControlName="amount" />
