@@ -11,9 +11,13 @@ import { TransactionCreateModule } from "./transaction-create/transaction-create
 import { AuthModule } from "./auth/auth.module";
 import { AuthInterceptor } from "./auth/auth.interceptor";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { CategoryCreateComponent } from './category/category-create/category-create.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import { TransactionsComponent } from './view/transactions/transactions.component';
+import { CategoriesComponent } from './view/categories/categories.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CategoryCreateComponent, CategoryListComponent, TransactionsComponent, CategoriesComponent],
   imports: [
     BrowserModule,
     FlexLayoutModule,

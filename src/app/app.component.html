@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<clr-main-container>
+  <clr-header>
+    <div class="header-nav" [clr-nav-level]="1">
+      <a class="nav-link nav-text">Transactions</a>
+      <a class="nav-link nav-text">Categories</a>
+    </div>
+  </clr-header>
+  <div class="content-container">
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</clr-main-container>

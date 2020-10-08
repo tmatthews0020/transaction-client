@@ -1,17 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TransactionCreateComponent } from './transaction-create.component';
-import { ClarityModule } from '@clr/angular';
-import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { TransactionCreateComponent } from "./transaction-create.component";
+import { ClarityModule } from "@clr/angular";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [TransactionCreateComponent],
-  imports: [
-    CommonModule,
-    ClarityModule,
-    ReactiveFormsModule,
-  ]
+  imports: [CommonModule, ClarityModule, ReactiveFormsModule],
+  exports: [TransactionCreateComponent],
 })
-export class TransactionCreateModule { }
+export class TransactionCreateModule {}
