@@ -11,19 +11,26 @@ import { TransactionCreateModule } from "./transaction-create/transaction-create
 import { AuthModule } from "./auth/auth.module";
 import { AuthInterceptor } from "./auth/auth.interceptor";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { CategoryCreateComponent } from './category/category-create/category-create.component';
-import { CategoryListComponent } from './category/category-list/category-list.component';
-import { TransactionsComponent } from './view/transactions/transactions.component';
-import { CategoriesComponent } from './view/categories/categories.component';
+import { CategoryCreateComponent } from "./category/category-create/category-create.component";
+import { CategoryListComponent } from "./category/category-list/category-list.component";
+import { TransactionsComponent } from "./view/transactions/transactions.component";
+import { CategoriesComponent } from "./view/categories/categories.component";
+import { CategoryCreateModule } from "./category/category-create/category-create.module";
 
 @NgModule({
-  declarations: [AppComponent, CategoryCreateComponent, CategoryListComponent, TransactionsComponent, CategoriesComponent],
+  declarations: [
+    AppComponent,
+    CategoryListComponent,
+    TransactionsComponent,
+    CategoriesComponent,
+  ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     AppRoutingModule,
     TransactionListModule,
     TransactionCreateModule,
+    CategoryCreateModule,
     HttpClientModule,
     ClarityModule,
     BrowserAnimationsModule,

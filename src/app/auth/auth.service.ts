@@ -6,8 +6,6 @@ import { Injectable } from "@angular/core";
 export class AuthService {
   constructor() {}
 
-  tokenRetrievedTime: number;
-
   get token(): string {
     return localStorage.getItem("ID_TOKEN");
   }
@@ -25,16 +23,24 @@ export class AuthService {
   }
 
   get expiresIn(): number {
-    this.tokenRetrievedTime = Date.now();
-    return parseInt(localStorage.getItem("ACCESS_TOKEN"));
+    return parseInt(localStorage.getItem("EXPIRES_IN"));
   }
 
   get expired(): boolean {
-    const timeSince = (this.tokenRetrievedTime - Date.now()) / 3600;
+    const timeSince = (Date.now() - this.tokenRetrievedAt) / 3600;
     return this.expiresIn < timeSince;
   }
 
+  get tokenRetrievedAt(): number {
+    return parseInt(localStorage.getItem("TOKEN_RETRIEVED_AT"));
+  }
+
+  set tokenRetrievedAt(time: number) {
+    localStorage.setItem("TOKEN_RETRIEVED_AT", Date.now().toString());
+  }
+
   set expiresIn(expiresIn: number) {
+    this.tokenRetrievedAt = Date.now();
     localStorage.setItem("EXPIRES_IN", expiresIn.toString());
   }
 }

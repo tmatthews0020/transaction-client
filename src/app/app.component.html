@@ -1,8 +1,20 @@
 <clr-main-container>
   <clr-header>
     <div class="header-nav" [clr-nav-level]="1">
-      <a class="nav-link nav-text">Transactions</a>
-      <a class="nav-link nav-text">Categories</a>
+      <a
+        class="nav-link nav-text"
+        [ngClass]="{ active: active === 'transaction' }"
+        (click)="setActive('transaction')"
+        routerLink=""
+        >Transactions</a
+      >
+      <a
+        class="nav-link nav-text"
+        [ngClass]="{ active: active === 'category' }"
+        (click)="setActive('category')"
+        routerLink="/categories"
+        >Categories</a
+      >
     </div>
   </clr-header>
   <div class="content-container">

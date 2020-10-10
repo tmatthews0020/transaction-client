@@ -1,1 +1,15 @@
-<p>category-list works!</p>
+<clr-datagrid>
+  <clr-dg-column>Category Name</clr-dg-column>
+  <clr-dg-row *ngFor="let category of categories$ | async">
+    <clr-dg-cell>{{ category.categoryName }} </clr-dg-cell>
+  </clr-dg-row>
+  <clr-dg-footer>
+    <clr-dg-pagination #pagination [clrDgPageSize]="10">
+      <clr-dg-page-size [clrPageSizeOptions]="[10, 20, 50, 100]"
+        >Categories per page</clr-dg-page-size
+      >
+      {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} of
+      {{ pagination.totalItems }} categories
+    </clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>

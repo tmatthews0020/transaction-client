@@ -13,4 +13,11 @@ export class CategoryService {
   getCategories(): Observable<Category[]> {
     return this.httpClient.get<Category[]>(environment.listCategoriesApiUrl);
   }
+
+  createCategory(category: Category): Observable<Category> {
+    return this.httpClient.post<Category>(
+      environment.createCategoryApiUrl,
+      category
+    );
+  }
 }

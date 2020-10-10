@@ -1,1 +1,11 @@
-<p>category-create works!</p>
+<div>
+  <form clrForm [formGroup]="form" (ngSubmit)="saveCategory()">
+    <clr-input-container>
+      <label>Category Name</label>
+      <input clrInput type="string" formControlName="categoryName" />
+    </clr-input-container>
+    <button [disabled]="form.invalid" class="btn btn-primary">
+      Add Category
+    </button>
+  </form>
+</div>
